@@ -8,13 +8,19 @@
 #titulo {
     font-family: sans-serif;
     color: #002b7a;
+    padding-top: 3%;
+    animation-name: fadebotao;
+    animation-duration: 2s;
 } 
 
 /* Elementos com o ID "subtitulo" */
 #subtitulo {
     font-family: sans-serif;
     color: #002b7a;
-    margin-left: 10%;
+    margin-left: 7%;
+    
+    animation-name: fadebotao;
+    animation-duration: 2s;
 } 
 
 #check{
@@ -24,18 +30,17 @@
 /* Elementos de tag <fieldset>*/
 fieldset {
     border: 0;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 
 /* Elemento de tag <body> */
 body{
-    background-color: #F0F8FF;
+   background-color: #E0E0F8;   
     font-family: sans-serif;
     font-size: 1em;
     color: #002b7a;
-    margin-left: 39%;
-    margin-top: 2%;
-    
-   
+    margin-left: 5%; 
 }
 
 /* Elementos de tags <body>, <input>, <Select>, <textarea> e <button> */
@@ -44,11 +49,13 @@ input, select, textarea, button {
     font-size: 1em;
     color: #002b7a;
     border-radius: 5px;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 
 /* Elementos de classe "grupo" nos estados das pseudoclasses "before" e "after" */
 .grupo:before, .grupo:after {
-    display: table;*/
+    display: table;
     
 
 }
@@ -56,13 +63,16 @@ input, select, textarea, button {
 /* Elementos de classe "grupo" no estado da pseudoclasse "after" */
 .grupo:after {
     clear: both;
+    
+    
 }
 
 /* Elementos de classe "campo" */
 .campo {
     margin-bottom: 1em;
     justify-content: center;
-
+    animation-name: fade;
+    animation-duration: 1s;
     
 }
 
@@ -70,7 +80,8 @@ input, select, textarea, button {
 .campo label {
     margin-bottom: 0.2em;
     color: #002b7a;
-    /*#59429d*/
+    animation-name: fade;
+    animation-duration: 1s;
     display: block;
 }
 
@@ -78,6 +89,9 @@ input, select, textarea, button {
 fieldset.grupo .campo {
     float:  left;
     margin-right: 1em;
+    margin-top: 20px;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 
 /* Elementos de classe "campo" das tags <input> com atributo text e email, da tag <select> e da tag <textarea>*/
@@ -86,16 +100,22 @@ fieldset.grupo .campo {
     border: 1px solid #59429d;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     display: block;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 
 /* Elementos de classe "campo" de tag <select> e <option>*/
 .campo select option {
     padding-right: 1em;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 
 /* Elemento de classe "campo" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
 .campo input:focus, .campo select:focus, .campo textarea:focus {
     background: #E0E0F8;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 
 /* Elemento de classe "botao" */
@@ -109,10 +129,12 @@ fieldset.grupo .campo {
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     position: absolute;
-    top: 90%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+    top: 75%;
+    left: 16%;
+    animation-name: fadebotao;
+    animation-duration: 4s;
+   /* margin-right: -50%;*/
+    transform: translate(-50%, -50%);
 }
 
 /* Elemento de classe "botao" com o estado da pseudoclasse "hover" */
@@ -128,4 +150,52 @@ fieldset.grupo .campo {
 }
 #check{
     display: inline-block;
+}
+
+/*form{
+    animation-name: fade;
+    animation-duration: 1s;
+}*/
+
+
+
+
+@keyframes fade {
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadebotao {
+    from{
+        opacity: 0;     
+    }to{
+        opacity: 1;      
+    }
+}
+
+#container{position:relative;}
+#coberturas1 {
+    position: relative;
+    background-color: #CCBBFF;
+    width: 50%;
+   /* height: 300px;*/
+  
+  
+}
+#coberturas2 {
+    background-image: url(fundo.png);
+    
+    width: 74%;
+    height: 100vh;
+    right: 20%;
+
+    /* código para mostrar apenas 50% da div Cinzenta (coberturas1) */
+    position:absolute;
+    top:0px; /* muda este valor para "0" - Isto foi apenas mostrar o que está a acontecer por detrás da div */
+    right:0%; /* 25% significa metade (que neste caso será 50%) do tamanho de ambas as divs */
 }
